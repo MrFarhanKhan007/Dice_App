@@ -1,11 +1,11 @@
 import "package:flutter/material.dart";
+import "package:project_1/DiceRoll.dart";
 
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
 
 class MyWidget extends StatelessWidget {
   const MyWidget(this.text, this.colors, {super.key});
-  
   final String text;
   final List<Color> colors;
 
@@ -17,26 +17,9 @@ class MyWidget extends StatelessWidget {
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: colors,
-                begin: startAlignment,
-                end: endAlignment),
+                colors: colors, begin: startAlignment, end: endAlignment),
           ),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  text,
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic),
-                ),
-                const NewText()
-              ],
-            ),
-          ),
+          child: const Center(child: DiceRoller()),
         ),
       ),
     );
